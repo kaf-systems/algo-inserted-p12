@@ -138,9 +138,9 @@
             </dict>
             <key>UserDefinedName</key>
 {% if proxy_enabled is defined and proxy_enabled == true %}
-            <string>Algo VPN {{ IP_subject_alt_name }} IKEv2 with proxy</string>
+            <string>VPN {{ item.0 }}with proxy</string>
   {% else %}
-            <string>Algo VPN {{ IP_subject_alt_name }} IKEv2</string>
+            <string>VPN {{ item.0 }}</string>
 {% endif %}
             <key>VPNType</key>
             <string>IKEv2</string>
@@ -190,9 +190,9 @@
     </array>
     <key>PayloadDisplayName</key>
 {% if proxy_enabled is defined and proxy_enabled == true %}
-    <string>{{ IP_subject_alt_name }} IKEv2 with proxy</string>
+    <string>{{ item.0 }} VPN Profile with proxy</string>
   {% else %}
-    <string>{{ IP_subject_alt_name }} IKEv2</string>
+    <string>{{ item.0 }} VPN Profile</string>
 {% endif %}
     <key>PayloadIdentifier</key>
 {% if proxy_enabled is defined and proxy_enabled == true %}

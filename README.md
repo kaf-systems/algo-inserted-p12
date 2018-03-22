@@ -5,6 +5,10 @@
 * p12 pass is inserted to .mobileconfig and windows scripts
 * changed profile and VPN name to user's name
 
+## Original repo: 
+
+* https://github.com/trailofbits/algo
+
 ---
 
 [![Join the chat at https://gitter.im/trailofbits/algo](https://badges.gitter.im/trailofbits/algo.svg)](https://gitter.im/trailofbits/algo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)

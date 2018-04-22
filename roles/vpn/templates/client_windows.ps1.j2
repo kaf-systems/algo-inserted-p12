@@ -81,6 +81,7 @@ $ErrorActionPreference = "Stop"
 $VpnServerAddress = "{{ IP_subject_alt_name }}"
 $VpnName = "Algo VPN {{ IP_subject_alt_name }} IKEv2"
 $VpnUser = "{{ item.0 }}"
+$Password = "{{ easyrsa_p12_export_password }}"
 $CaCertificateBase64 = "{{ PayloadContentCA }}"
 $UserPkcs12Base64 = "{{ item.1.stdout }}"
 
@@ -144,7 +145,10 @@ function Add-AlgoVPN {
     try {
         $certs = Save-AlgoVpnCertificates -OutputDirectory $workDir
         $importPfxCertParams = @{
+            <#
             Password = $Pkcs12DecryptionPassword
+            #>
+            Password = $Password
             FilePath = $certs.UserPkcs12
             CertStoreLocation = "Cert:\LocalMachine\My"
         }

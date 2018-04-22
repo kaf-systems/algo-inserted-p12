@@ -124,24 +124,12 @@
             <key>Proxies</key>
             <dict>
                 <key>HTTPEnable</key>
-{% if proxy_enabled is defined and proxy_enabled == true %}
-                <integer>1</integer>
-                <key>HTTPPort</key>
-                <integer>8118</integer>
-                <key>HTTPProxy</key>
-                <string>{{ local_service_ip }}</string>
-  {% else %}
                 <integer>0</integer>
-{% endif %}
                 <key>HTTPSEnable</key>
                 <integer>0</integer>
             </dict>
             <key>UserDefinedName</key>
-{% if proxy_enabled is defined and proxy_enabled == true %}
-            <string>VPN {{ item.0 }}with proxy</string>
-  {% else %}
             <string>VPN {{ item.0 }}</string>
-{% endif %}
             <key>VPNType</key>
             <string>IKEv2</string>
         </dict>
@@ -189,17 +177,9 @@
         </dict>
     </array>
     <key>PayloadDisplayName</key>
-{% if proxy_enabled is defined and proxy_enabled == true %}
-    <string>{{ item.0 }} VPN Profile with proxy</string>
-  {% else %}
     <string>{{ item.0 }} VPN Profile</string>
-{% endif %}
     <key>PayloadIdentifier</key>
-{% if proxy_enabled is defined and proxy_enabled == true %}
-    <string>donut.local.{{ 600000 | random | to_uuid | upper }}</string>
-  {% else %}
     <string>donut.local.{{ 500000 | random | to_uuid | upper }}</string>
-{% endif %}
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
